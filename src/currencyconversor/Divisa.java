@@ -1,75 +1,55 @@
 package currencyconversor;
-/*
- * objeto		
-Divisa	Atributos	Descripcion
-	Nombre	Contiene el nombre de la moneda
-	Valor	Contiene el valor de la moneda
-	Pais	Contiene el pais de la moneda
-	ValorDeCambio	Almacena  El valor de cambio de la moneda
-		
-	Metodos	
-	converDestino	Convierte la moneda original a un nuevo valor de cambio asignado por la variable valor de cambio
-	ConverOrigen	Convierte la moneda cambiada a su valor por defecto
-
- * 
- * */
 
 public class Divisa {
-public Divisa() {
-		// TODO Auto-generated constructor stub
+	
+	
+	/*GETTERS AND SETTERS*/
+	/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+	private String nombreMoneda ;
+	private double ValorMonedaOrigen ;
+	private double ValorDeCambio;
+	private double ResultadoConversion;
+	
+	
+		public String getNombreMoneda() {
+		return nombreMoneda;
 	}
-	//Variables que almacenan los datos
-	private String Nombre;
-	private String Pais;
-	private float valorOriginal;//Es el valor original de conversion es decir 1 dolar = 17.05 pesos
-	private float valorFinal;//Este es el valor de la moneda despues de la conversion
-	private float cantidadAconvertir;//Es la cantidad de unidades de la moneda a convertir
+	public void setNombreMoneda(String nombreMoneda) {
+		this.nombreMoneda = nombreMoneda;
+	}
+	public double getValorMonedaOrigen() {
+		return ValorMonedaOrigen;
+	}
+	public void setValorMonedaOrigen(double valorMonedaOrigen) {
+		ValorMonedaOrigen = valorMonedaOrigen;
+	}
+	public double getValorDeCambio() {
+		return ValorDeCambio;
+	}
+	public void setValorDeCambio(double valorDeCambio) {
+		ValorDeCambio = valorDeCambio;
+	}
+	public double getResultadoConversion() {
+		return ResultadoConversion;
+	}
+	public void setResultadoConversion(double resultadoConversion) {
+		ResultadoConversion = resultadoConversion;
+	}
+		
+	/*final de los getters and setters*/
 	
 	
-	
-	/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-	public float getValorFinal() {
-		return valorFinal;
+	//Method tha make the conversion
+	public double conversion(double unidadesDeMonedaAconvertir) {
+		
+		
+		return this.ResultadoConversion = ((unidadesDeMonedaAconvertir * this.ValorDeCambio)*100)/100;
 	}
 
-	public void setValorFinal(float valorFinal) {
-		this.valorFinal = valorFinal;
-	}
-	/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-
-	public float getCantidadAconvertir() {
-		return cantidadAconvertir;
-	}
-
-	public void setCantidadAconvertir(float cantidadAconvertir) {
-		this.cantidadAconvertir = cantidadAconvertir;
-	}
-	/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+public double RetornarConversion(double unidadesDeMonedaAconvertir) {
 	
-	/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-	/*ESTE METODO CONVERTIRA Y DEVOLVERA LA MONEDA CONVERTIDA*/
-	public float HacerConversion() {
-		return this.valorOriginal*this.cantidadAconvertir;
-	}
-	
-	
-	
-	
-	
-	
-/***Estas lineas dan y obtiene el valor original de la moneda*/
-	public float getValorOriginal() {
-		return valorOriginal;
-	}
-	public void setValorOriginal(float valorOriginal) {
-		this.valorOriginal = valorOriginal;
-	}
-/*++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-	
-
-	
+	return unidadesDeMonedaAconvertir/this.ValorDeCambio;
+}
 
 
-	
-	
 }

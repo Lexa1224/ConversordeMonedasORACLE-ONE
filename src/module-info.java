@@ -6,4 +6,5 @@
  *
  */
 module currencyconversor {
+	requires java.desktop;
 }

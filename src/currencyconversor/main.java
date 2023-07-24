@@ -1,5 +1,5 @@
 /**
- * 
+ * CURRENCY CONVERSOR VESION 0.1
  */
 package currencyconversor;
 
@@ -10,72 +10,72 @@ import java.util.Scanner;
  *
  */
 public class main {
-
-	public static float LecturasUsuarios() {
-		Scanner lecturas = new Scanner(System.in);
-		float lectura =lecturas.nextFloat();
-		return lectura;
-	}
-	
 	
 	public static void main(String[] args) {
-		int opcion = 0;
-		float valorPeso = 17.05f;
-		float valorDolar = 1;
-		float unidadesAconvertir = 0;
-		//Creando instancia para peso mexicano
-		PesoMexicano pesoMexico = new PesoMexicano();
+	
+	double ValorPesoMexicano = 17.05;//	
+	double ValorPesoMexicanoAdolar = 0.05;
+	int opcion = 2;
+	double unidadesDeMonedaAconvertir = 1;
+	double retorno=0;
+	
+	/*ZONA DE LECTURAS PARA LAS ENTRADAS DE LOS DATOS*/
+	//creamos la clase scanner que leera los datos del usuario
+	Scanner entrada = new Scanner(System.in);//OBJETO QUE MANEJARA LAS LECTURAS
+	/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+	//Seleccionamos la opcion
+	System.out.println("Seleccione una opcion \t 1)Dolares A pesos Mexicanos\t 2)Pesos Mexicanos A Dolares\n");
+	opcion =entrada.nextInt();//Leemos la opcion del usuario
+	/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+	
+	
+	/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/		
+		System.out.println("Ingrese la cantidad de dinero que desea convertir");
+	unidadesDeMonedaAconvertir=entrada.nextDouble();//leemos la cantidad de dinero a convertir
+	/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+		
+	/*FINALIZA LA ENTRADA DE LOS DATOS*/
 
 		
-		System.out.println("Hola bienvenido al conversor\n");
+		
+		
+		
+		
+	switch (opcion) {
+	case 1:
+		//Creamos las intancias de las diferentes monedas
+				Divisa DolarAPesoMexicano = new Divisa();//Creamos el peso mexicano
+				DolarAPesoMexicano.setValorDeCambio(ValorPesoMexicano);//le asignamos el valor de un peso mexicanos
+				retorno=DolarAPesoMexicano.conversion(unidadesDeMonedaAconvertir);//Llamamos al metodo conversion
+				System.out.println("Convirtiendo "+unidadesDeMonedaAconvertir+" dolares  a " +retorno+" pesos mexicanos ");//imprimimos el resultado
 			
-		//Creamos la instancia de peso mexicano
+				
+		break;
+	case 2:
+		
+		Divisa PesoMexicanoAdolar = new Divisa(); 
+		PesoMexicanoAdolar.setValorDeCambio(ValorPesoMexicano);
+		retorno = PesoMexicanoAdolar.RetornarConversion(unidadesDeMonedaAconvertir);
+		System.out.println("Convirtiendo "+unidadesDeMonedaAconvertir+" pesos  a " +retorno+" dolares ");//imprimimos el resultado
+		//PesoMexicanoAdolar.RetornarConversion();	
+		
+		break;
+
+	default:
+		break;
+	}	
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 
-		System.out.println("Bienvenido al conversor de alura Ones Challenge grupo 5\n");//Saludo principal
-		System.out.println("Elija la opcion de conversion\n");//Primer etapa de menu
-		System.out.println("1) Pesos A Dolares \t 2) Dolares A pesos\n");//Opciones disponibles
-		opcion = (int) LecturasUsuarios();
 		
-		/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-		//THIS BUCLE MAKE THE VALIDATION OF THE USER CHOOSE
-		while(opcion <=0 || opcion >4 ) {
-			System.out.println("Opcion Invalida intente de nuevo\n");
-			opcion = (int) LecturasUsuarios();
-		}
-		/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-		System.out.println("Opcion seleccionada "+opcion+"\n");
-		System.out.println("Ingrese la cantidad de unidades de la moneda que quiere convertir\n");
-		unidadesAconvertir = (float)LecturasUsuarios();
-		System.out.println(unidadesAconvertir);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		switch (opcion) {
-		case 1:
-			
-			System.out.println("Conversion de pesos a dolares\n");
-			pesoMexico.setValorOriginal(valorPeso);
-			System.out.println(pesoMexico.getValorOriginal());
-			pesoMexico.setCantidadAconvertir(unidadesAconvertir);
-			pesoMexico.HacerConversion();
-			System.out.println("La conversion de "+unidadesAconvertir+" dolares da como resultado "+pesoMexico.getValorFinal()+"pesos Mexicanos \n");
-						
-			break;
-
-		default:
-			break;
-		}//final del if
 		
 		
 	}//final del main
