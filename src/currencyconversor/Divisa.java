@@ -39,16 +39,27 @@ public class Divisa {
 	/*final de los getters and setters*/
 	
 	
-	//Method tha make the conversion
+	
+	//Method that make the conversion
 	public double conversion(double unidadesDeMonedaAconvertir) {
+		this.ResultadoConversion = (unidadesDeMonedaAconvertir * this.ValorDeCambio);
+		double numeroMultiplicado = this.ResultadoConversion*100;
+		double resultadoRedondeado = Math.round(numeroMultiplicado);
+		double resultado =resultadoRedondeado/100; 
 		
-		
-		return this.ResultadoConversion = ((unidadesDeMonedaAconvertir * this.ValorDeCambio)*100)/100;
+		//return this.ResultadoConversion = ((unidadesDeMonedaAconvertir * this.ValorDeCambio)*100)/100;
+		//return this.ResultadoConversion = (((unidadesDeMonedaAconvertir * this.ValorDeCambio)/100)*1000);
+		return resultado;
 	}
 
+	//this method return the currency to orignal value
 public double RetornarConversion(double unidadesDeMonedaAconvertir) {
-	
-	return unidadesDeMonedaAconvertir/this.ValorDeCambio;
+	double retornoNumeroSinRedondeo =unidadesDeMonedaAconvertir/this.ValorDeCambio;
+	double numeroMultiplicado = retornoNumeroSinRedondeo*100;
+	double resultadoRedondeado = Math.round(numeroMultiplicado);
+	double resultado =resultadoRedondeado/100;
+	//return (((unidadesDeMonedaAconvertir/this.ValorDeCambio)*1000)/100);
+	return resultado;
 }
 
 

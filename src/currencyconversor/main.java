@@ -294,6 +294,7 @@ public static double UnidadesAconvertir() {
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 public static void resultados(double conversion,String moneda) {
 	
+	//double redondeo = (conversion/100)*100;
 	JOptionPane.showMessageDialog(null,"Tienes "+conversion +" "+moneda);
 }
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
