@@ -7,7 +7,16 @@ public class Divisa {
 	/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 	private String nombreMoneda ;
 	private double ValorMonedaOrigen ;
-	private double ValorDeCambio;
+	
+	
+	/**
+	 * {@summary}
+	 * This variable save de value of the currency 
+	 * for example a peso mexicano = 17.50
+	 * 
+	 * */
+	private double ValorDeCambio;//AQUI ES DONDE SE GUARDA EL VALOR DE CAMBIO DE LA MONEDA
+	
 	private double ResultadoConversion;
 	
 	
@@ -52,6 +61,21 @@ public class Divisa {
 		return resultado;
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	//this method return the currency to orignal value
 public double RetornarConversion(double unidadesDeMonedaAconvertir) {
 	double retornoNumeroSinRedondeo =unidadesDeMonedaAconvertir/this.ValorDeCambio;
